@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .checkbox-group input {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Event Registration Form</h2>
+
+        <form action="/submit" method="POST">
+            <!-- Personal Information Section -->
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- Event Details Section -->
+            <div class="form-group">
+                <label for="session">Which session will you be attending?</label>
+                <select id="session" name="session" required>
+                    <option value="session1">Session 1: [Session 1 Name]</option>
+                    <option value="session2">Session 2: [Session 2 Name]</option>
+                    <option value="session3">Session 3: [Session 3 Name]</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Dietary Preferences (if applicable):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="vegetarian" name="dietary_preferences" value="vegetarian">
+                    <label for="vegetarian">Vegetarian</label>
+                    <br>
+                    <input type="checkbox" id="vegan" name="dietary_preferences" value="vegan">
+                    <label for="vegan">Vegan</label>
+                    <br>
+                    <input type="checkbox" id="gluten_free" name="dietary_preferences" value="gluten_free">
+                    <label for="gluten_free">Gluten-Free</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Additional Comments or Special Requests:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+
+            <!-- Payment Information Section -->
+            <div class="form-group">
+                <label for="ticket_type">Ticket Type:</label>
+                <select id="ticket_type" name="ticket_type" required>
+                    <option value="general">General Admission</option>
+                    <option value="vip">VIP Admission</option>
+                    <option value="student">Student Admission</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="payment_method">Payment Method:</label>
+                <select id="payment_method" name="payment_method" required>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="total_amount">Total Amount Due:</label>
+                <input type="text" id="total_amount" name="total_amount" value="$100" readonly>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="terms" required> I agree to the <a href="/terms" target="_blank">terms and conditions</a>.
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+</body>
+</html>
